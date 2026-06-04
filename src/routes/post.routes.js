@@ -3,7 +3,7 @@ const router = express.Router();
 const upload = require("../middlewares/multer.middleware");
 
 const postController = require("../controllers/post.controller");
-const {protectRoute} = require("../middlewares/auth.middleware");
+const {protectRoute} = require("../middlewares/authenticate.middleware");
 
 // Routes Mapping
 router.post("/create", protectRoute, upload.single("image"), postController.createPost);
